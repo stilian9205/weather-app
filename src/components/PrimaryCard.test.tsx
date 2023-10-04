@@ -3,7 +3,6 @@ import { render, fireEvent } from '@testing-library/react';
 import PrimaryCard from './PrimaryCard';
 import { temperatureUnits } from '../constants/constants';
 
-// Sample props for testing
 const sampleProps = {
     id: '1',
     onWeatherCardClick: jest.fn(),

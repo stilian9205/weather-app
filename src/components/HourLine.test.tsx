@@ -1,19 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import HourLine from './HourLine';
-import { getIcon } from '../utils/getWeatherTypes';jest.mock('../utils/getWeatherTypes');  // Mock the getIcon function
+import { getIcon } from '../utils/getWeatherTypes';jest.mock('../utils/getWeatherTypes'); 
+jest.mock('../utils/getWeatherTypes'); 
 
-jest.mock('../utils/getWeatherTypes');  // Mock the getIcon function
-
-// Sample props for testing
 const sampleProps = {
     hourOfTheWeather: '10:00 AM',
-    weatherType: 'rain', // This should match one of the supported weather types in getWeatherTypes
+    weatherType: 'rain', 
     highestTemp: 20,
     lowestTemp: 10,
     feelsLike: 15,
     windSpeed: 5,
-    unitOfMeasure: 'metric' // Assuming 'metric' is one of the supported unit types
+    unitOfMeasure: 'metric' 
 };
 
 describe('<HourLine />', () => {
@@ -24,9 +22,8 @@ describe('<HourLine />', () => {
     it('displays the correct hour, weather data, and metric sign', () => {
         const { getByText } = render(<HourLine {...sampleProps} />);
 
-        // Checking for the displayed data based on the provided props
         expect(getByText('10:00 AM')).toBeInTheDocument();
-        expect(getByText('10 °C')).toBeInTheDocument();  // Assuming °C is the metric sign
+        expect(getByText('10 °C')).toBeInTheDocument();  
         expect(getByText('Low')).toBeInTheDocument();
         expect(getByText('20 °C')).toBeInTheDocument();
         expect(getByText('High')).toBeInTheDocument();
@@ -47,12 +44,10 @@ describe('<HourLine />', () => {
             unitOfMeasure: "Celsius"
         };
 
-        // Setting up what the mocked function should return
         (getIcon as jest.Mock).mockReturnValue(<span>cloudy-icon</span>);
         
         const { getByText } = render(<HourLine {...mockProps} />);
 
         expect(getByText("cloudy-icon")).toBeInTheDocument();
     });
-    // TODO: Add more tests, e.g., for different weather types and unit measures to ensure all paths in getIcon and metricSign logic are covered.
 });

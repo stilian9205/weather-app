@@ -6,23 +6,19 @@ import { WeatherDataProvider } from '../WeatherContext';
 import { temperatureUnits } from '../constants/constants';
 import { MemoryRouter } from 'react-router-dom';
 
-// Mocking the axios module
 jest.mock('axios');
 
-// Cast the mocked axios module to its mocked version
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
-// Mocked API response
 const mockApiResponse = {
     data: {
         city: { name: 'Sample City' },
-        list: [] // You can populate this with a sample list from your real API
+        list: [] 
     }
 };
 
 describe('MainPage', () => {
     beforeEach(() => {
-        // Reset the mocks before each test
         mockedAxios.get.mockResolvedValue(mockApiResponse);
     });
 
@@ -73,9 +69,7 @@ it('displays the city name after fetching weather data', async () => {
         const celsiusButton = getByText(temperatureUnits[0].name + ' ' + temperatureUnits[0].sign);
         fireEvent.click(celsiusButton);
 
-        // You can also assert other behavior resulting from this interaction
-        await waitFor(() => expect(axios.get).toHaveBeenCalledTimes(2)); // Since axios gets called again to fetch new data
+        await waitFor(() => expect(axios.get).toHaveBeenCalledTimes(2));
     });
 
-    // TODO: Add more tests based on behavior of the component (e.g., loading state, error states, interactions, etc.)
 });

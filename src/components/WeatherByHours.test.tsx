@@ -14,7 +14,6 @@ jest.mock('../customHooks/weatherDataHook');
 
 describe('WeatherByHours', () => {
     beforeEach(() => {
-        // Mock hooks as needed
         (useNavigate as jest.Mock).mockReturnValue(jest.fn());
         (useLocation as jest.Mock).mockReturnValue({
             state: {
@@ -27,7 +26,6 @@ describe('WeatherByHours', () => {
                 id: 1,
                 byHours: [
                     { hourOfTheWeather: '1AM', weatherType: 'Cloudy', highestTemp: 10, lowestTemp: 5, feelsLike: 7, windSpeed: 5, unitOfMeasure: 'C' }
-                    // Add other hourly data as needed
                 ]
             }]
         });
@@ -38,5 +36,4 @@ describe('WeatherByHours', () => {
         expect(screen.getByText('1AM')).toBeInTheDocument();
     });
     
-    // Add more tests based on component behavior and interactions.
 });
