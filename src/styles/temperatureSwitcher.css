@@ -1,0 +1,41 @@
+.temperature-switcher {
+    display: flex;
+    margin: 0 auto;
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: rgb(110 147 255 /30%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.temperature-switcher:hover {
+    transform: scale(1.05);
+}
+
+.temperature-units {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.temperature-units:hover {
+    background: rgb(110 147 255 / 50%);;
+    
+}
+
+.temperature-units:first-of-type:hover {
+    border-bottom-left-radius: 20px;
+}
+
+.temperature-units:last-of-type:hover {
+    border-bottom-right-radius: 20px;
+}
+
+.temperature-units-divider {
+    padding: 10px;
+}
+
+.inactive-temperature-units {
+    color: rgb(240 240 240 /50%) !important;
+    cursor: not-allowed !important;
+}

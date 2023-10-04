@@ -1,0 +1,31 @@
+.container { 
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.primary-card {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.secondary-cards {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.go-back-arrow {
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
