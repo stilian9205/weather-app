@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import TemperatureSwitcher from './TemperatureSwitcher';
 import { temperatureUnits } from '../constants/constants';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('TemperatureSwitcher', () => {
     const mockOnChangeMetrics = jest.fn();

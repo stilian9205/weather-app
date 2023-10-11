@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import SecondaryCard from './SecondaryCard';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('SecondaryCard', () => {   
     const mockOnClick = jest.fn();

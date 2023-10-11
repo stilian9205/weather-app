@@ -5,6 +5,7 @@ import MainPage from './MainPage';
 import { WeatherDataProvider } from '../WeatherContext';
 import { temperatureUnits } from '../constants/constants';
 import { MemoryRouter } from 'react-router-dom';
+import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('axios');
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import PrimaryCard from './PrimaryCard';
 import { temperatureUnits } from '../constants/constants';
+import '@testing-library/jest-dom/extend-expect';
 
 const sampleProps = {
     id: '1',

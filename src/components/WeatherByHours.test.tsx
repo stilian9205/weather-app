@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import WeatherByHours from './WeatherByHours';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useWeatherData } from '../customHooks/weatherDataHook';
+import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
